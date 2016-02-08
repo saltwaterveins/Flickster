@@ -14,8 +14,11 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
 
     @IBOutlet weak var tableView: UITableView!
     var Movie: [NSDictionary]?
+    var endpoint: String!
+    
     var filteredData: [String]!
     var data: [String]!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +30,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.delegate = self
         
         let apiKey = "a07e22bc18f5cb106bfe4cc1f83ad8ed"
-        let url = NSURL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=\(apiKey)")
+        let url = NSURL(string: "https://api.themoviedb.org/3/movie/\(endpoint)?api_key=\(apiKey)")
         let request = NSURLRequest(
             URL: url!,
             cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData,
@@ -86,14 +89,16 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         let movie = Movie![indexPath.row]
         let title = movie["title"] as! String
         let overview = movie["overview"] as! String
-        let posterPath = movie["poster_path"] as! String
-        let baseURL = "http://image.tmdb.org/t/p/w500/"
-        
-        let imageURL = NSURL(string: baseURL + posterPath)
-        
         cell.titleLabel.text = title
         cell.overviewLabel.text = overview
-        cell.posterView.setImageWithURL(imageURL!)
+        
+        let baseURL = "http://image.tmdb.org/t/p/w500/"
+        
+        if let posterPath = movie["poster_path"] as? String {
+            let imageURL = NSURL(string: baseURL + posterPath)
+            cell.posterView.setImageWithURL(imageURL!)
+            cell.selectionStyle = .None
+        }
     
         
         print("row \(indexPath.row)")
@@ -155,15 +160,27 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         task.resume()
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        let cell = sender as! UITableViewCell
+        let indexpath = tableView.indexPathForCell(cell)
+        let movies = Movie![indexpath!.row]
+        
+        let detailViewController = segue.destinationViewController as! DetailViewCellViewController
+        detailViewController.movie = movies
+        
+        print("segue called~")
+    
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+
     
 
 }
