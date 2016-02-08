@@ -13,8 +13,9 @@ import MBProgressHUD
 class MoviesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
-    
     var Movie: [NSDictionary]?
+    var filteredData: [String]!
+    var data: [String]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +23,6 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: "refreshControlAction:", forControlEvents: UIControlEvents.ValueChanged)
         tableView.insertSubview(refreshControl, atIndex: 0)
-
         tableView.dataSource = self
         tableView.delegate = self
         
@@ -56,6 +56,16 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
 
         // Do any additional setup after loading the view.
     }
+    
+    let totalColors: Int = 100
+    func colorForIndexPath(indexPath: NSIndexPath) -> UIColor {
+        if indexPath.row >= totalColors {
+            return UIColor.blackColor()	// return black if we get an unexpected row index
+        }
+        
+        var hueValue: CGFloat = CGFloat(indexPath.row) / CGFloat(totalColors)
+        return UIColor(hue: hueValue, saturation: 1.0, brightness: 1.0, alpha: 1.0)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -84,7 +94,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         cell.titleLabel.text = title
         cell.overviewLabel.text = overview
         cell.posterView.setImageWithURL(imageURL!)
-        
+    
         
         print("row \(indexPath.row)")
         return cell
@@ -154,5 +164,6 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         // Pass the selected object to the new view controller.
     }
     */
+    
 
 }
