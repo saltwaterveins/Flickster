@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3EFE1AB2B79C9F5782C2363F /* Pods_Flickster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF3E409ED683D5B19936D1D7 /* Pods_Flickster.framework */; };
+		6254A8BC650D1F862925D403 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 990DC6EF4629EBC246BFC84D /* Pods.framework */; };
 		7F715D381C605C5A00409251 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F715D371C605C5A00409251 /* AppDelegate.swift */; };
 		7F715D3D1C605C5A00409251 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F715D3B1C605C5A00409251 /* Main.storyboard */; };
 		7F715D3F1C605C5A00409251 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F715D3E1C605C5A00409251 /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 		7F715D431C605C5A00409251 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F715D491C605CCE00409251 /* MoviesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
 		7F715D4C1C60696900409251 /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		990DC6EF4629EBC246BFC84D /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF3E409ED683D5B19936D1D7 /* Pods_Flickster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flickster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC3D3FBCD2971CDBA5EF8490 /* Pods-Flickster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flickster.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Flickster/Pods-Flickster.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -36,6 +38,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3EFE1AB2B79C9F5782C2363F /* Pods_Flickster.framework in Frameworks */,
+				6254A8BC650D1F862925D403 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +49,7 @@
 			isa = PBXGroup;
 			children = (
 				AF3E409ED683D5B19936D1D7 /* Pods_Flickster.framework */,
+				990DC6EF4629EBC246BFC84D /* Pods.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -205,7 +209,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Flickster/Pods-Flickster-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9481D86F3E295DB565B83EE1 /* Check Pods Manifest.lock */ = {
