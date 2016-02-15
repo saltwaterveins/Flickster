@@ -21,14 +21,10 @@ The following **optional** features are implemented:
 - [ ] All images fade in as they are loading.
 - [x] Customize the UI.
 
-The following **additional** features are implemented:
-
-- [ ] List anything else that you can get done to improve the app functionality!
-
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1. 
-2. 
+1. Did anyone try collection view and want to help me?
+2. Did anyone try making a search function and want to help me?
 
 ## Video Walkthrough 
 
@@ -40,7 +36,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+I tried to make a search function but I couldn't figure it out :c
 
 ## License
 
@@ -60,9 +56,9 @@ Describe any challenges encountered while building the app.
 
 # Project 2 - *FLickster*
 
-**Name of your app** is a movies app displaying box office and top rental DVDs using [The Movie Database API](http://docs.themoviedb.apiary.io/#).
+**Flickster** is a movies app displaying box office and top rental DVDs using [The Movie Database API](http://docs.themoviedb.apiary.io/#).
 
-Time spent: **3** hours spent in total
+Time spent: **~3** hours spent in total
 
 ## User Stories
 
@@ -79,12 +75,12 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-- [ ]
+- [x] The background of the descriptions is opaque, which I think is pretty cool.
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1. Which views are better?
-2. Which views are easier to implement?
+1. Would you use this app?
+2. It'd be better with location of showings/times of showings.
 
 ## Video Walkthrough 
 
@@ -96,7 +92,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+I wanted to do a collection view for this... maybe some day~ 
 
 ## License
 
